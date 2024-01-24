@@ -47,7 +47,7 @@ You can use `ProxyLimiter` as you want to use it:
 - `remove proxy`: Removes a proxy from a proxy list
 - `add_used_proxy`: Let script know that proxy was used by the main system
 
-### Details of defs
+### Details of methods
 - `no_limits: bool = False`: Changes between: returning a random proxy from a list or looking for a proxy with the best timeout.
 - `any_if_timeout: bool = False`: Changes between: returning a random proxy if all the proxies have a bad timeout or returning None
 - `proxy: str`: A proxy to append/remove/insert
