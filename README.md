@@ -43,14 +43,14 @@ Proxy-Controller is a Python script designed to filter and use only proxies that
 You can use `ProxyLimiter` as you want to use it:
 
 - `get_proxy`: Get a proxy checking with timeout value.
- - `no_limits: bool = False`: Changes between: returning a random proxy from a list or looking for a proxy with the best timeout.
- - `any_if_timeout: bool = False`: Changes between: returning a random proxy if all the proxies have a bad timeout or returning None
 - `append_proxy`: Appends a proxy to a proxy list
- - `proxy: str`: A proxy to append
 - `remove proxy`: Removes a proxy from a proxy list
- - `proxy: str`: A proxy to remove
 - `add_used_proxy`: Let script know that proxy was used by the main system
- - `proxy: str`: A proxy
+
+### Details of defs
+- `no_limits: bool = False`: Changes between: returning a random proxy from a list or looking for a proxy with the best timeout.
+- `any_if_timeout: bool = False`: Changes between: returning a random proxy if all the proxies have a bad timeout or returning None
+- `proxy: str`: A proxy to append/remove/insert
 
 ## Configuration
 
