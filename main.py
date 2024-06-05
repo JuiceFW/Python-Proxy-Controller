@@ -4,6 +4,8 @@ import datetime
 import random
 import time
 
+
+
 class ProxyLimiter:
     def __init__(self, proxies: list[str], timeout: int = 30) -> None:
         self.proxies = proxies
@@ -13,9 +15,12 @@ class ProxyLimiter:
         for item in self.proxies:
             self.proxies_data[item] = None
 
+
     def get_proxy(self, no_limits: bool = False, any_if_timeout: bool = False) -> Union[str, None]:
         """
-        no_limits: bool = False - Return a random proxy from list or listen to timeout.
+            Returns: str
+
+            no_limits: bool = False - Return a random proxy from list or listen to timeout.
         """
         
         if not self.proxies: # If there are no proxies in list - return None
@@ -38,13 +43,15 @@ class ProxyLimiter:
                 return random.choice(self.proxies)
             else:
                 return None
-            
+
+ 
     def append_proxy(self, proxy: str) -> None:
         if proxy in self.proxies:
             return
         
         self.proxies.append(proxy)
         self.proxies_data[proxy] = None
+
 
     def remove_proxy(self, proxy: str) -> None:
         if proxy in self.proxies:
@@ -59,7 +66,8 @@ class ProxyLimiter:
                 print(traceback.format_exc())
 
         return
-    
+
+
     def add_used_proxy(self, proxy: str, time: datetime.datetime = None) -> None:
         self.append_proxy(proxy)
 
@@ -71,8 +79,9 @@ class ProxyLimiter:
 
         return
 
-def main() -> None:
-    """Simulation of a real worker."""
+
+def main():
+    """ Simulation of a real function. """
     
     proxies = ["1_proxy", "2_proxy", "3_proxy", "4_proxy", "5_proxy"] # A list of all proxies
     limiter = ProxyLimiter(proxies) # Initialize class with proxy list
@@ -83,6 +92,7 @@ def main() -> None:
         limiter.add_used_proxy(proxy) # Telling that proxy was used
 
         time.sleep(0.1)
+
 
 if __name__ == "__main__":
     main()
